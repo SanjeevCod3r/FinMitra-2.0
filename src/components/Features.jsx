@@ -11,7 +11,7 @@ function Features() {
       details: 'With over 10 years of experience in the financial services industry, FinMitra has built a reputation for reliability and trustworthiness. We are registered with all major financial regulatory bodies and maintain strict compliance with industry standards. Our team of certified financial advisors works tirelessly to ensure that every customer receives personalized attention and the best possible financial solutions tailored to their unique needs.'
     },
     {
-      icon: 'fa fa-dollar-sign',
+      icon: 'fa fa-rupee-sign',
       title: 'Anytime Money Back',
       description: 'Our transparent policies ensure hassle-free refunds and cancellations within specified periods. No hidden charges, complete peace of mind.',
       details: 'FinMitra offers a comprehensive money-back guarantee on all our services. If you are not satisfied with any of our financial products within the first 30 days, you are eligible for a full refund. Our transparent pricing model ensures no hidden charges or unexpected fees. All terms and conditions are clearly explained upfront, and our customer service team is always available to address any concerns about our refund policy.'
