@@ -1599,8 +1599,13 @@
   
   /* Modal mobile fixes */
   .modern-dialog {
-    width: 95vw !important;
-    margin: 1rem !important;
+    width: 90vw !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    position: fixed !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
   }
   
   .modern-header {
@@ -1609,7 +1614,7 @@
   
   .modern-body {
     padding: 1rem !important;
-    max-height: 60vh !important;
+    max-height: 70vh !important;
   }
   
   .modern-form .form-control {

@@ -133,7 +133,15 @@ function Services() {
         {showModal && (
           <div className="position-fixed top-0 start-0 w-100 h-100 modern-modal" style={{ zIndex: 1050 }}>
             <div className="w-100 h-100 modern-modal-backdrop" onClick={closeForm}></div>
-            <div className="position-absolute top-50 start-50 translate-middle bg-white rounded-4 shadow modern-dialog" style={{ width: 'min(900px, 95vw)' }}>
+            <div className="modern-dialog bg-white rounded-4 shadow" style={{ 
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: 'min(900px, 90vw)',
+              maxHeight: '90vh',
+              overflowY: 'auto'
+            }}>
               <div className="p-3 p-md-4 border-bottom d-flex justify-content-between align-items-center modern-header">
                 <h5 className="mb-0">Details Form {selectedService ? `- ${selectedService}` : ''}</h5>
                 <button className="modern-close btn btn-sm rounded-circle" onClick={closeForm} aria-label="Close">&times;</button>
