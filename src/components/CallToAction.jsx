@@ -20,8 +20,13 @@ function CallToAction() {
           </div>
           <div className="col-lg-4">
             <div className="text-center">
-              <div className="bg-white rounded-4 p-4 shadow-lg">
-                <h4 className="text-primary mb-3">Quick Contact</h4>
+              <div className="bg-white rounded-4 p-4 shadow-lg position-relative overflow-hidden">
+                {/* Highlight Badge */}
+                <div className="position-absolute top-0 end-0 bg-warning text-dark rounded-start-pill px-3 py-1">
+                  <small className="fw-bold">Quick Contact</small>
+                </div>
+                
+                <h4 className="text-primary mb-3 mt-2">Quick Contact</h4>
                 <div className="d-flex align-items-center mb-3">
                   <i className="fas fa-phone-alt text-primary me-3"></i>
                   <span>+91 81786 25027</span>
