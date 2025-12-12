@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
+import IndiaTime from './IndiaTime'
 
 function Navbar() {
   const [isSticky, setIsSticky] = useState(false)
@@ -25,30 +26,23 @@ function Navbar() {
             <div className="col-lg-8 text-center text-lg-start mb-lg-0">
               <div className="d-flex flex-wrap">
                 <div className="border-end border-primary pe-3">
-                  <a href="#" className="text-muted small"><i className="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
+                  <a href="tel:+918178625027" className="text-muted small"><i className="fas fa-phone-alt text-primary me-2"></i>+91 81786 25027</a>
                 </div>
                 <div className="ps-3">
-                  <a href="mailto:example@gmail.com" className="text-muted small"><i className="fas fa-envelope text-primary me-2"></i>example@gmail.com</a>
+                  <a href="mailto:info@finmitrafinanceinsurance.com" className="text-muted small"><i className="fas fa-envelope text-primary me-2"></i>info@finmitrafinanceinsurance.com</a>
                 </div>
               </div>
             </div>
             <div className="col-lg-4 text-center text-lg-end">
-              <div className="d-flex justify-content-end">
-                <div className="d-flex border-end border-primary pe-3">
+              <div className="d-flex justify-content-end align-items-center">
+                <div className="d-flex">
                   <a className="btn p-0 text-primary me-3" href="#"><i className="fab fa-facebook-f"></i></a>
                   <a className="btn p-0 text-primary me-3" href="#"><i className="fab fa-twitter"></i></a>
                   <a className="btn p-0 text-primary me-3" href="#"><i className="fab fa-instagram"></i></a>
                   <a className="btn p-0 text-primary me-0" href="#"><i className="fab fa-linkedin-in"></i></a>
                 </div>
-                <div className="dropdown ms-3">
-                  <a href="#" className="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i className="fas fa-globe-europe text-primary me-2"></i> English</small></a>
-                  <div className="dropdown-menu rounded">
-                    <a href="#" className="dropdown-item">English</a>
-                    <a href="#" className="dropdown-item">Bangla</a>
-                    <a href="#" className="dropdown-item">French</a>
-                    <a href="#" className="dropdown-item">Spanish</a>
-                    <a href="#" className="dropdown-item">Arabic</a>
-                  </div>
+                <div className="ms-4 d-flex align-items-center">
+                  <IndiaTime />
                 </div>
               </div>
             </div>
@@ -100,8 +94,8 @@ function Navbar() {
                     <Link to="/services" className={`mobile-nav-item ${isActive('/services') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
                       <i className="fa fa-concierge-bell me-3"></i> Services
                     </Link>
-                    <Link to="/blog" className={`mobile-nav-item ${isActive('/blog') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
-                      <i className="fa fa-blog me-3"></i> Blog
+                    <Link to="/emi-calculator" className={`mobile-nav-item ${isActive('/emi-calculator') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+                      <i className="fa fa-calculator me-3"></i> EMI
                     </Link>
                     <div className="mobile-nav-dropdown">
                       <div className="mobile-nav-item">
@@ -112,6 +106,7 @@ function Navbar() {
                         <Link to="/team" className="mobile-dropdown-item" onClick={() => setIsMenuOpen(false)}>Our team</Link>
                         <Link to="/testimonial" className="mobile-dropdown-item" onClick={() => setIsMenuOpen(false)}>Testimonial</Link>
                         <Link to="/faq" className="mobile-dropdown-item" onClick={() => setIsMenuOpen(false)}>FAQs</Link>
+                        <Link to="/blog" className="mobile-dropdown-item" onClick={() => setIsMenuOpen(false)}>Blog</Link>
                       </div>
                     </div>
                     <Link to="/contact" className={`mobile-nav-item ${isActive('/contact') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
@@ -129,7 +124,7 @@ function Navbar() {
                         </div>
                         <div>
                           <div className="small text-muted">Call to Our Experts</div>
-                          <div className="fw-bold">Free: + 0123 456 7890</div>
+                          <div className="fw-bold">Free: + 91 81786 25027</div>
                         </div>
                       </div>
                       <div className="d-flex align-items-center">
@@ -138,7 +133,7 @@ function Navbar() {
                         </div>
                         <div>
                           <div className="small text-muted">Email Us</div>
-                          <div className="fw-bold">example@gmail.com</div>
+                          <div className="fw-bold">info@finmitrafinanceinsurance.com</div>
                         </div>
                       </div>
                     </div>
@@ -158,7 +153,7 @@ function Navbar() {
                 <Link to="/" className={`nav-item nav-link ${isActive('/') ? 'active' : ''}`}>Home</Link>
                 <Link to="/about" className={`nav-item nav-link ${isActive('/about') ? 'active' : ''}`}>About</Link>
                 <Link to="/services" className={`nav-item nav-link ${isActive('/services') ? 'active' : ''}`}>Services</Link>
-                <Link to="/blog" className={`nav-item nav-link ${isActive('/blog') ? 'active' : ''}`}>Blog</Link>
+                <Link to="/emi-calculator" className={`nav-item nav-link ${isActive('/emi-calculator') ? 'active' : ''}`}>EMI</Link>
                 <div className="nav-item dropdown">
                   <a href="#" className="nav-link" data-bs-toggle="dropdown">
                     <span className="dropdown-toggle">Pages</span>
@@ -168,6 +163,7 @@ function Navbar() {
                     <Link to="/team" className="dropdown-item">Our team</Link>
                     <Link to="/testimonial" className="dropdown-item">Testimonial</Link>
                     <Link to="/faq" className="dropdown-item">FAQs</Link>
+                    <Link to="/blog" className="dropdown-item">Blog</Link>
                   </div>
                 </div>
                 <Link to="/contact" className={`nav-item nav-link ${isActive('/contact') ? 'active' : ''}`}>Contact</Link>
@@ -185,7 +181,7 @@ function Navbar() {
               </a>
               <div className="d-flex flex-column ms-3">
                 <span>Call to Our Experts</span>
-                <a href="tel:+01onal234567890"><span className="text-dark">Free: + 0123 456 7890</span></a>
+                <a href="tel:+918178625027"><span className="text-dark">Free: + 91 81786 25027</span></a>
               </div>
             </div>
           </nav>

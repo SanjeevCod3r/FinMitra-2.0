@@ -88,7 +88,7 @@ function Contact() {
                 <i className="fas fa-envelope fa-2x text-primary me-4"></i>
                 <div>
                   <h4>Mail Us</h4>
-                  <p className="mb-0">info@example.com</p>
+                  <p className="mb-0">info@finmitrafinanceinsurance.com</p>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ function Contact() {
                 <i className="fa fa-phone-alt fa-2x text-primary me-4"></i>
                 <div>
                   <h4>Telephone</h4>
-                  <p className="mb-0">(+012) 3456 7890</p>
+                  <p className="mb-0">(+91) 81786 25027</p>
                 </div>
               </div>
             </div>

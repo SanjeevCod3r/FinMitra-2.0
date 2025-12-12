@@ -33,7 +33,7 @@ function Blog() {
         <div className="text-center mx-auto pb-5 animated fadeInUp" style={{ maxWidth: '800px' }}>
           <h4 className="text-primary">From Blog</h4>
           <h1 className="display-4 mb-4">News And Updates</h1>
-          <p className="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.</p>
+          <p className="mb-0">Stay updated with the latest financial insights, loan tips, insurance guides, and credit card advice from FinMitra's expert team to make informed financial decisions.</p>
         </div>
         <div className="row g-4 justify-content-center">
           {posts.map((post, index) => (
@@ -52,7 +52,7 @@ function Blog() {
                     <div className="small"><span className="fa fa-comment-alt text-primary"></span> 6 Comments</div>
                   </div>
                   <a href="#" className="h4 d-inline-block mb-4">{post.title}</a>
-                  <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci...</p>
+                  <p className="mb-4">Discover practical tips and strategies to grow your business with smart financial planning and the right loan options from FinMitra.</p>
                   <a href="#" className="btn btn-light rounded-pill py-2 px-4">Read More</a>
                 </div>
               </div>

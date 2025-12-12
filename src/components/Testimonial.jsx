@@ -16,19 +16,19 @@ function Testimonial() {
       img: testimonial1,
       name: 'John Abraham',
       role: 'New York',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati.'
+      text: 'FinMitra made my loan process incredibly smooth. Their team guided me through every step and I got approval within 48 hours. Highly recommend their services!'
     },
     {
       img: testimonial2,
       name: 'Mary Johnson',
       role: 'California',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati.'
+      text: 'The insurance plans offered by FinMitra are comprehensive and affordable. Their advisors helped me choose the perfect coverage for my family. Excellent service!'
     },
     {
       img: testimonial3,
       name: 'David Williams',
       role: 'Texas',
-      text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati.'
+      text: 'I needed a business loan urgently and FinMitra delivered beyond expectations. Minimal paperwork, competitive rates, and professional support throughout the process.'
     }
   ]
 
@@ -38,7 +38,7 @@ function Testimonial() {
         <div className="text-center mx-auto pb-5 animated fadeInUp" style={{ maxWidth: '800px' }}>
           <h4 className="text-primary">Testimonial</h4>
           <h1 className="display-4 mb-4">What Our Clients Say</h1>
-          <p className="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis.</p>
+          <p className="mb-0">Real stories from real customers who have transformed their financial journey with FinMitra's trusted services and expert guidance.</p>
         </div>
         <div className="testimonial-carousel position-relative">
           <div className="carousel-nav">

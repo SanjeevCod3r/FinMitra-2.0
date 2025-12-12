@@ -17,7 +17,7 @@ function Team() {
         <div className="text-center mx-auto pb-5 animated fadeInUp" style={{ maxWidth: '800px' }}>
           <h4 className="text-primary">Our Team</h4>
           <h1 className="display-4 mb-4">Meet Our Expert Team Members</h1>
-          <p className="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam.</p>
+          <p className="mb-0">Our dedicated financial experts bring years of experience in banking, insurance, and fintech to help you achieve your financial goals with confidence and trust.</p>
         </div>
         <div className="row g-4 justify-content-center">
           {members.map((member, index) => (

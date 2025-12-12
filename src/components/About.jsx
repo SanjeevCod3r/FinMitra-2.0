@@ -61,12 +61,12 @@ function About() {
                 <h4 className="text-primary mb-0">About Our Company</h4>
                 <div className="ms-3 flex-grow-1 gradient-bar"></div>
               </div>
-              <h1 className="display-6 mb-4">High Range of Exploring Protection</h1>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt debitis sint tempora. Corporis consequatur illo blanditiis voluptates aperiam quos aliquam totam aliquid rem explicabo,</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae praesentium recusandae eligendi modi hic</p>
-              <p className="text-dark"><i className="fa fa-check text-primary me-3"></i>We can save your money.</p>
-              <p className="text-dark"><i className="fa fa-check text-primary me-3"></i>Production or trading of good</p>
-              <p className="text-dark mb-4"><i className="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p>
+              <h1 className="display-6 mb-4">Complete Financial Protection Solutions</h1>
+              <p>FinMitra is your trusted partner in achieving financial security and growth. We provide comprehensive loan solutions, insurance coverage, and credit card options tailored to your unique needs.</p>
+              <p>Our expert team combines industry knowledge with cutting-edge technology to deliver personalized financial solutions that help you achieve your dreams and secure your family's future.</p>
+              <p className="text-dark"><i className="fa fa-check text-primary me-3"></i>Competitive interest rates on all loan products</p>
+              <p className="text-dark"><i className="fa fa-check text-primary me-3"></i>Quick approval and minimal documentation</p>
+              <p className="text-dark mb-4"><i className="fa fa-check text-primary me-3"></i>24/7 customer support and guidance</p>
               <a className="btn btn-primary rounded-pill py-3 px-5 shadow" href="#">More Information</a>
             </div>
           </div>

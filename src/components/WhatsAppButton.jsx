@@ -1,4 +1,4 @@
-function WhatsAppButton({ phone = '919999999999', message = 'Hello, I would like to know more.' }) {
+function WhatsAppButton({ phone = '918178625027', message = 'Hello, I would like to know more.' }) {
   const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
   return (
     <a

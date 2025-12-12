@@ -11,6 +11,7 @@ import Team from './pages/Team'
 import Testimonial from './pages/Testimonial'
 import FAQ from './pages/FAQ'
 import Features from './pages/Features'
+import EMICalculator from './pages/EMICalculator'
 import NotFound from './pages/NotFound'
 import Loader from './components/Loader'
 import WhatsAppButton from './components/WhatsAppButton'
@@ -38,6 +39,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/emi-calculator" element={<EMICalculator />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/team" element={<Team />} />
         <Route path="/testimonial" element={<Testimonial />} />
@@ -46,7 +48,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-      <WhatsAppButton phone="919999999999" message="Hi FinMitra, I have a query!" />
+      <WhatsAppButton phone="918178625027" message="Hi FinMitra, I have a query!" />
     </>
   )
 }

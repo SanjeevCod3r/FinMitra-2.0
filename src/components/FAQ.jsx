@@ -5,20 +5,20 @@ function FAQ() {
 
   const faqs = [
     {
-      question: 'What is the Life Insurance?',
-      answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, placeat. Similique eum quasi rem quos ab porro sit tempore accusamus deserunt omnis error, totam magni autem atque cupiditate perspiciatis accusantium.'
+      question: 'What types of loans does FinMitra offer?',
+      answer: 'FinMitra offers personal loans, business loans, home loans, and education loans with competitive interest rates and flexible repayment terms. Each loan is tailored to meet your specific financial requirements.'
     },
     {
-      question: 'Is Life Insurance Worth Having?',
-      answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, placeat. Similique eum quasi rem quos ab porro sit tempore accusamus deserunt omnis error, totam magni autem atque cupiditate perspiciatis accusantium.'
+      question: 'How quickly can I get loan approval?',
+      answer: 'Our streamlined approval process ensures quick decisions. Most personal loans are approved within 24-48 hours, while business loans may take 2-3 business days depending on the documentation and loan amount.'
     },
     {
-      question: 'When Should You Buy Life Insurance?',
-      answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, placeat. Similique eum quasi rem quos ab porro sit tempore accusamus deserunt omnis error, totam magni autem atque cupiditate perspiciatis accusantium.'
+      question: 'What insurance products are available?',
+      answer: 'FinMitra provides comprehensive insurance solutions including life insurance, health insurance, car insurance, and home insurance. We partner with leading insurance companies to offer the best coverage at affordable premiums.'
     },
     {
-      question: 'How Much Life Insurance Do You Need?',
-      answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, placeat. Similique eum quasi rem quos ab porro sit tempore accusamus deserunt omnis error, totam magni autem atque cupiditate perspiciatis accusantium.'
+      question: 'How do I apply for a credit card through FinMitra?',
+      answer: 'Applying for a credit card is simple. Fill out our online application form, submit the required documents, and our team will help you choose the best card based on your income and spending patterns. Approval typically takes 3-5 business days.'
     }
   ]
 

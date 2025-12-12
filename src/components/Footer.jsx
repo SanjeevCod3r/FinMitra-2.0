@@ -21,7 +21,7 @@ function Footer() {
                   <img src={logo} alt="FinMitra logo" style={{ height: '32px' }} className="me-2" />
                   FinMitra
                 </h4>
-                <p className="text-white mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                <p className="text-white mb-3">FinMitra is your trusted financial partner, offering comprehensive loan solutions, insurance coverage, and credit card options to help you achieve your financial goals with confidence.</p>
                 <div className="d-flex align-items-center">
                   <i className="fas fa-share fa-2x text-white me-2"></i>
                   <a className="btn btn-light btn-md-square rounded-circle me-3" href="#"><i className="fab fa-facebook-f text-dark"></i></a>
