@@ -37,7 +37,7 @@ function Services() {
         { title: 'Health Insurance', icon: 'fa fa-hospital', img: blog2 },
         { title: 'Life Insurance', icon: 'fa fa-heart', img: blog1 },
         { title: 'Auto Insurance', icon: 'fa fa-car', img: carLoanImg },
-        { title: 'Car, Truck, Bus Etc.', icon: 'fa fa-truck', img: carLoanImg },
+        { title: 'Commercial Vehicle', icon: 'fa fa-truck', img: carLoanImg },
         { title: 'Two Wheeler Insurance', icon: 'fa fa-motorcycle', img: blog3 }
       ]
     },

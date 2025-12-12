@@ -14,21 +14,21 @@ function Testimonial() {
   const testimonials = [
     {
       img: testimonial1,
-      name: 'John Abraham',
-      role: 'New York',
-      text: 'FinMitra made my loan process incredibly smooth. Their team guided me through every step and I got approval within 48 hours. Highly recommend their services!'
+      name: 'Rajesh Kumar',
+      role: 'Mumbai',
+      text: 'Quick and easy loan process. Got approved in 2 days. Good service.'
     },
     {
       img: testimonial2,
-      name: 'Mary Johnson',
-      role: 'California',
-      text: 'The insurance plans offered by FinMitra are comprehensive and affordable. Their advisors helped me choose the perfect coverage for my family. Excellent service!'
+      name: 'Priya Sharma',
+      role: 'Delhi',
+      text: 'Affordable insurance plans. Helped me choose the right coverage for my family.'
     },
     {
       img: testimonial3,
-      name: 'David Williams',
-      role: 'Texas',
-      text: 'I needed a business loan urgently and FinMitra delivered beyond expectations. Minimal paperwork, competitive rates, and professional support throughout the process.'
+      name: 'Amit Patel',
+      role: 'Bangalore',
+      text: 'Needed urgent business loan. Minimal paperwork, good rates. Professional team.'
     }
   ]
 
