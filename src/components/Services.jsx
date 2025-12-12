@@ -206,7 +206,7 @@ function Services() {
                       <input type="text" className="form-control form-control-lg" placeholder="Pincode" pattern="^[0-9]{6}$" />
                     </div>
                     <div className="col-md-6 field">
-                      <label className="form-label">Loan Required</label>
+                      <label className="form-label">{selectedService.includes('Insurance') ? 'Sum Assured' : 'Loan Required'}</label>
                       <input type="text" className="form-control form-control-lg" placeholder="Amount / Product" required />
                     </div>
                   </div>
