@@ -1,14 +1,15 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Autoplay, EffectFade } from 'swiper/modules'
+import { Navigation, Autoplay, EffectFade, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
+import 'swiper/css/pagination'
 import carouselImg from '../assets/images/carousel-2.png'
+import blogImg from '../assets/images/blog-2.png'
 
 function HeroCarousel() {
-  const prevRef = useRef(null)
-  const nextRef = useRef(null)
+  const [activeIndex, setActiveIndex] = useState(0)
 
   const slides = [
     {
@@ -16,30 +17,36 @@ function HeroCarousel() {
       title: "Get the Right Loan, Insurance & Cards",
       subtitle: "Welcome to FinMitra",
       description: "One place for Personal & Business Loans, Insurance, and Credit Cards. Simple, fast and transparent.",
-      alignment: 'start'
+      alignment: 'start',
+      image: carouselImg
     },
     {
       id: 2,
       title: "Fast Approvals. Honest Guidance.",
       subtitle: "Your trusted financial partner",
       description: "Compare options, apply in minutes, and let our team handle the rest.",
-      alignment: 'end'
+      alignment: 'end',
+      image: blogImg
     }
   ]
 
   return (
     <div className="header-carousel">
       <Swiper
-        modules={[Navigation, Autoplay, EffectFade]}
+        modules={[Autoplay, EffectFade, Pagination]}
         effect="fade"
         loop={true}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        onInit={(swiper) => {
-          swiper.params.navigation.prevEl = prevRef.current
-          swiper.params.navigation.nextEl = nextRef.current
-          swiper.navigation.init()
-          swiper.navigation.update()
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        pagination={{
+          clickable: true,
+          el: '.hero-dots',
+          bulletClass: 'hero-dot',
+          bulletActiveClass: 'hero-dot-active',
+          renderBullet: (index, className) => {
+            return `<span class="${className}"></span>`
+          }
         }}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
@@ -60,7 +67,7 @@ function HeroCarousel() {
                     </div>
                     <div className="col-lg-5 animated fadeInRight">
                       <div className="carousel-img mt-4 mt-lg-0" style={{ objectFit: 'cover' }}>
-                        <img src={carouselImg} className="img-fluid w-100 rounded-3" alt="" />
+                        <img src={slide.image} className="img-fluid w-100 rounded-3" alt="" />
                       </div>
                     </div>
                   </div>
@@ -70,10 +77,7 @@ function HeroCarousel() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="carousel-nav">
-        <button ref={prevRef} className="carousel-prev"><i className="bi bi-arrow-left"></i></button>
-        <button ref={nextRef} className="carousel-next"><i className="bi bi-arrow-right"></i></button>
-      </div>
+      <div className="hero-dots"></div>
     </div>
   )
 }
