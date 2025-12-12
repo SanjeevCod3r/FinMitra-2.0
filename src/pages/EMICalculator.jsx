@@ -105,15 +105,15 @@ function EMICalculator() {
                 </div>
                 
                 <div className="col-md-12">
-                  <div className="d-flex gap-3">
+                  <div className="d-flex flex-column flex-sm-row gap-3">
                     <button 
-                      className="btn btn-primary rounded-pill py-3 px-5 shadow flex-grow-1"
+                      className="btn btn-primary rounded-pill py-3 px-5 shadow flex-grow-1 flex-sm-grow-0"
                       onClick={calculateEMI}
                     >
                       <i className="fa fa-calculator me-2"></i> Calculate EMI
                     </button>
                     <button 
-                      className="btn btn-secondary rounded-pill py-3 px-5 shadow"
+                      className="btn btn-secondary rounded-pill py-3 px-5 shadow flex-sm-grow-0"
                       onClick={handleReset}
                     >
                       <i className="fa fa-redo me-2"></i> Reset
