@@ -54,10 +54,13 @@ function Navbar() {
       <div className={`container-fluid nav-bar px-0 px-lg-4 py-lg-0 ${isSticky ? 'sticky-top shadow-sm' : ''}`}>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light">
-            <Link to="/" className="navbar-brand p-0 d-flex align-items-center">
+            <a href="/" className="navbar-brand p-0 d-flex align-items-center" onClick={() => window.location.reload()}>
               <img src={logo} alt="FinMitra logo" style={{ height: '40px' }} className="me-2" />
-              <h1 className="text-primary mb-0">FinMitra</h1>
-            </Link>
+              <h1 className="mb-0 fw-bold">
+                <span className="text-primary">Fin</span>
+                <span className="text-secondary">Mitra</span>
+              </h1>
+            </a>
             <button 
               className="navbar-toggler d-lg-none" 
               type="button" 
@@ -70,10 +73,13 @@ function Navbar() {
               <div className={`mobile-drawer ${isMenuOpen ? 'show' : ''}`}>
                 <div className="drawer-header">
                   <div className="d-flex align-items-center justify-content-between">
-                    <div className="d-flex align-items-center">
+                    <a href="/" className="d-flex align-items-center text-decoration-none" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); window.location.reload(); }}>
                       <img src={logo} alt="FinMitra logo" style={{ height: '40px' }} className="me-2" />
-                      <h4 className="text-primary mb-0">FinMitra</h4>
-                    </div>
+                      <h4 className="mb-0 fw-bold">
+                        <span className="text-white">Fin</span>
+                        <span className="text-warning">Mitra</span>
+                      </h4>
+                    </a>
                     <button 
                       className="btn btn-close-drawer" 
                       onClick={() => setIsMenuOpen(false)}

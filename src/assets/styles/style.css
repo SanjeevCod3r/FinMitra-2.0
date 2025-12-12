@@ -140,6 +140,105 @@
     max-height: 50px;
 }
 
+/* Mobile Header Brand Styling */
+.navbar-light .navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-brand h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-light .navbar-brand h1 span {
+    transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-brand:hover h1 span.text-primary {
+    color: #764ba2 !important;
+}
+
+.navbar-light .navbar-brand:hover h1 span.text-secondary {
+    color: #667eea !important;
+}
+
+.navbar-light .navbar-brand img {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.navbar-light .navbar-brand:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.3));
+}
+
+/* Mobile Responsive Header */
+@media (max-width: 991px) {
+    .navbar-light .navbar-brand {
+        flex: 1;
+        max-width: fit-content;
+    }
+    
+    .navbar-light .navbar-brand img {
+        height: 35px !important;
+        width: auto;
+        margin-right: 10px !important;
+    }
+    
+    .navbar-light .navbar-brand h1 {
+        font-size: 1.8rem !important;
+        font-weight: 600;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-light .navbar-brand img {
+        height: 32px !important;
+        margin-right: 8px !important;
+    }
+    
+    .navbar-light .navbar-brand h1 {
+        font-size: 1.6rem !important;
+        font-weight: 600;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-light .navbar-brand img {
+        height: 30px !important;
+        margin-right: 8px !important;
+    }
+    
+    .navbar-light .navbar-brand h1 {
+        font-size: 1.5rem !important;
+        font-weight: 600;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar-toggler {
+        padding: 0.25rem 0.5rem;
+        font-size: 1.2rem;
+    }
+}
+
 .navbar .navbar-nav .nav-item .nav-link {
     padding: 0;
 }
