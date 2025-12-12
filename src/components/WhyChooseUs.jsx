@@ -215,18 +215,20 @@ function WhyChooseUs() {
                 <hr />
                 <p>{selectedReason.details}</p>
                 <div className="mt-4">
-                  <button 
-                    className={`${selectedReason.bgClass} text-white btn rounded-pill py-3 px-5 me-3`}
-                    onClick={closeModal}
-                  >
-                    <i className="fa fa-phone-alt me-2"></i> Contact Us
-                  </button>
-                  <button 
-                    className="btn btn-outline-secondary rounded-pill py-3 px-5"
-                    onClick={closeModal}
-                  >
-                    Close
-                  </button>
+                  <div className="d-flex flex-column flex-sm-row gap-3">
+                    <button 
+                      className={`${selectedReason.bgClass} text-white btn rounded-pill py-3 px-5 flex-grow-1 flex-sm-grow-0`}
+                      onClick={closeModal}
+                    >
+                      <i className="fa fa-phone-alt me-2"></i> Contact Us
+                    </button>
+                    <button 
+                      className="btn btn-outline-secondary rounded-pill py-3 px-5 flex-grow-1 flex-sm-grow-0"
+                      onClick={closeModal}
+                    >
+                      Close
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
