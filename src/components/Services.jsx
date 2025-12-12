@@ -17,7 +17,7 @@ import bobCardImg from '../assets/images/bob_card-removebg-preview.png'
 function Services() {
   const [showModal, setShowModal] = useState(false)
   const [selectedService, setSelectedService] = useState('')
-  const [activeCategory, setActiveCategory] = useState('All')
+  const [activeCategory, setActiveCategory] = useState('Loans')
   const [query, setQuery] = useState('')
 
   const categories = [
@@ -42,7 +42,7 @@ function Services() {
       ]
     },
     {
-      name: 'Credit Card',
+      name: 'Card',
       items: [
         { title: 'HDFC Credit Card', icon: 'fa fa-credit-card', img: hdfcCardImg },
         { title: 'SBI Credit Card', icon: 'fa fa-credit-card', img: sbiCardImg },
@@ -71,14 +71,14 @@ function Services() {
 
         <div className="d-flex flex-column flex-md-row align-items-stretch align-items-md-center gap-3 mb-4">
           <div className="btn-group flex-wrap" role="group" aria-label="Category filter">
-            {['All', ...categories.map(c => c.name)].map((cat) => (
+            {categories.map((cat) => (
               <button
-                key={cat}
+                key={cat.name}
                 type="button"
-                className={`btn btn-sm ${activeCategory === cat ? 'btn-primary' : 'btn-outline-primary'} rounded-pill me-2 mb-2`}
-                onClick={() => setActiveCategory(cat)}
+                className={`btn btn-sm ${activeCategory === cat.name ? 'btn-primary' : 'btn-outline-primary'} rounded-pill me-2 mb-2`}
+                onClick={() => setActiveCategory(cat.name)}
               >
-                {cat}
+                {cat.name}
               </button>
             ))}
           </div>
@@ -96,7 +96,7 @@ function Services() {
           </div>
         </div>
 
-        {(activeCategory === 'All' ? categories : categories.filter(c => c.name === activeCategory)).map((cat, ci) => {
+        {categories.filter(c => c.name === activeCategory).map((cat, ci) => {
           const filteredItems = cat.items.filter(item => item.title.toLowerCase().includes(query.toLowerCase()))
           if (filteredItems.length === 0) return null
           return (
