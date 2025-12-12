@@ -6,6 +6,7 @@ import IndiaTime from './IndiaTime'
 function Navbar() {
   const [isSticky, setIsSticky] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -85,36 +86,40 @@ function Navbar() {
                 </div>
                 <div className="drawer-body">
                   <div className="mobile-nav">
-                    <Link to="/" className={`mobile-nav-item ${isActive('/') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+                    <Link to="/" className={`mobile-nav-item ${isActive('/') ? 'active' : ''}`} onClick={() => { setIsMenuOpen(false); window.scrollTo(0, 0); }}>
                       <i className="fa fa-home me-3"></i> Home
                     </Link>
-                    <Link to="/about" className={`mobile-nav-item ${isActive('/about') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+                    <Link to="/about" className={`mobile-nav-item ${isActive('/about') ? 'active' : ''}`} onClick={() => { setIsMenuOpen(false); window.scrollTo(0, 0); }}>
                       <i className="fa fa-info-circle me-3"></i> About
                     </Link>
-                    <Link to="/services" className={`mobile-nav-item ${isActive('/services') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+                    <Link to="/services" className={`mobile-nav-item ${isActive('/services') ? 'active' : ''}`} onClick={() => { setIsMenuOpen(false); window.scrollTo(0, 0); }}>
                       <i className="fa fa-concierge-bell me-3"></i> Services
                     </Link>
-                    <Link to="/emi-calculator" className={`mobile-nav-item ${isActive('/emi-calculator') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+                    <Link to="/emi-calculator" className={`mobile-nav-item ${isActive('/emi-calculator') ? 'active' : ''}`} onClick={() => { setIsMenuOpen(false); window.scrollTo(0, 0); }}>
                       <i className="fa fa-calculator me-3"></i> EMI
                     </Link>
                     <div className="mobile-nav-dropdown">
-                      <div className="mobile-nav-item">
-                        <i className="fa fa-file-alt me-3"></i> Pages <i className="fa fa-chevron-down ms-auto"></i>
+                      <div 
+                        className="mobile-nav-item"
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <i className="fa fa-file-alt me-3"></i> Pages <i className={`fa fa-chevron-down ms-auto ${isDropdownOpen ? 'rotate-180' : ''}`}></i>
                       </div>
-                      <div className="mobile-dropdown-menu">
-                        <Link to="/features" className="mobile-dropdown-item" onClick={() => setIsMenuOpen(false)}>Our Features</Link>
-                        <Link to="/team" className="mobile-dropdown-item" onClick={() => setIsMenuOpen(false)}>Our team</Link>
-                        <Link to="/testimonial" className="mobile-dropdown-item" onClick={() => setIsMenuOpen(false)}>Testimonial</Link>
-                        <Link to="/faq" className="mobile-dropdown-item" onClick={() => setIsMenuOpen(false)}>FAQs</Link>
-                        <Link to="/blog" className="mobile-dropdown-item" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+                      <div className={`mobile-dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
+                        <Link to="/features" className="mobile-dropdown-item" onClick={() => { setIsMenuOpen(false); setIsDropdownOpen(false); window.scrollTo(0, 0); }}>Our Features</Link>
+                        <Link to="/team" className="mobile-dropdown-item" onClick={() => { setIsMenuOpen(false); setIsDropdownOpen(false); window.scrollTo(0, 0); }}>Our team</Link>
+                        <Link to="/testimonial" className="mobile-dropdown-item" onClick={() => { setIsMenuOpen(false); setIsDropdownOpen(false); window.scrollTo(0, 0); }}>Testimonial</Link>
+                        <Link to="/faq" className="mobile-dropdown-item" onClick={() => { setIsMenuOpen(false); setIsDropdownOpen(false); window.scrollTo(0, 0); }}>FAQs</Link>
+                        <Link to="/blog" className="mobile-dropdown-item" onClick={() => { setIsMenuOpen(false); setIsDropdownOpen(false); window.scrollTo(0, 0); }}>Blog</Link>
                       </div>
                     </div>
-                    <Link to="/contact" className={`mobile-nav-item ${isActive('/contact') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+                    <Link to="/contact" className={`mobile-nav-item ${isActive('/contact') ? 'active' : ''}`} onClick={() => { setIsMenuOpen(false); window.scrollTo(0, 0); }}>
                       <i className="fa fa-envelope me-3"></i> Contact
                     </Link>
                   </div>
                   <div className="drawer-footer">
-                    <Link to="/contact" className="btn btn-primary rounded-pill py-3 px-4 w-100" onClick={() => setIsMenuOpen(false)}>
+                    <Link to="/contact" className="btn btn-primary rounded-pill py-3 px-4 w-100" onClick={() => { setIsMenuOpen(false); window.scrollTo(0, 0); }}>
                       <i className="fa fa-paper-plane me-2"></i> Get a Quote
                     </Link>
                     <div className="drawer-contact mt-4">
@@ -150,25 +155,25 @@ function Navbar() {
             )}
             <div className="collapse navbar-collapse d-none d-lg-flex">
               <div className="navbar-nav mx-0 mx-lg-auto">
-                <Link to="/" className={`nav-item nav-link ${isActive('/') ? 'active' : ''}`}>Home</Link>
-                <Link to="/about" className={`nav-item nav-link ${isActive('/about') ? 'active' : ''}`}>About</Link>
-                <Link to="/services" className={`nav-item nav-link ${isActive('/services') ? 'active' : ''}`}>Services</Link>
-                <Link to="/emi-calculator" className={`nav-item nav-link ${isActive('/emi-calculator') ? 'active' : ''}`}>EMI</Link>
+                <Link to="/" className={`nav-item nav-link ${isActive('/') ? 'active' : ''}`} onClick={() => window.scrollTo(0, 0)}>Home</Link>
+                <Link to="/about" className={`nav-item nav-link ${isActive('/about') ? 'active' : ''}`} onClick={() => window.scrollTo(0, 0)}>About</Link>
+                <Link to="/services" className={`nav-item nav-link ${isActive('/services') ? 'active' : ''}`} onClick={() => window.scrollTo(0, 0)}>Services</Link>
+                <Link to="/emi-calculator" className={`nav-item nav-link ${isActive('/emi-calculator') ? 'active' : ''}`} onClick={() => window.scrollTo(0, 0)}>EMI</Link>
                 <div className="nav-item dropdown">
                   <a href="#" className="nav-link" data-bs-toggle="dropdown">
                     <span className="dropdown-toggle">Pages</span>
                   </a>
                   <div className="dropdown-menu">
-                    <Link to="/features" className="dropdown-item">Our Features</Link>
-                    <Link to="/team" className="dropdown-item">Our team</Link>
-                    <Link to="/testimonial" className="dropdown-item">Testimonial</Link>
-                    <Link to="/faq" className="dropdown-item">FAQs</Link>
-                    <Link to="/blog" className="dropdown-item">Blog</Link>
+                    <Link to="/features" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Our Features</Link>
+                    <Link to="/team" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Our team</Link>
+                    <Link to="/testimonial" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Testimonial</Link>
+                    <Link to="/faq" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>FAQs</Link>
+                    <Link to="/blog" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Blog</Link>
                   </div>
                 </div>
-                <Link to="/contact" className={`nav-item nav-link ${isActive('/contact') ? 'active' : ''}`}>Contact</Link>
+                <Link to="/contact" className={`nav-item nav-link ${isActive('/contact') ? 'active' : ''}`} onClick={() => window.scrollTo(0, 0)}>Contact</Link>
                 <div className="nav-btn px-3">
-                  <Link to="/contact" className="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0">Get a Quote</Link>
+                  <Link to="/contact" className="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0" onClick={() => window.scrollTo(0, 0)}>Get a Quote</Link>
                 </div>
               </div>
             </div>

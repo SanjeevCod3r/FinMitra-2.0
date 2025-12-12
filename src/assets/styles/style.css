@@ -1365,6 +1365,8 @@
 
 .drawer-body {
   padding: 0;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
 }
 
 .mobile-nav {
@@ -1421,6 +1423,10 @@
   overflow: hidden;
   transition: max-height 0.4s ease;
   background: rgba(102, 126, 234, 0.03);
+}
+
+.mobile-dropdown-menu.show {
+  max-height: 200px;
 }
 
 .mobile-nav-dropdown:hover .mobile-dropdown-menu {
@@ -1513,6 +1519,156 @@
   
   .drawer-footer {
     padding: 1.25rem;
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 767px) {
+  /* Services page mobile fixes */
+  .service-item {
+    margin-bottom: 1rem;
+  }
+  
+  .service-content {
+    padding: 1rem !important;
+  }
+  
+  .service-content p {
+    font-size: 0.9rem;
+  }
+  
+  /* Team page mobile fixes */
+  .team-item {
+    margin-bottom: 1rem;
+  }
+  
+  .team-title {
+    padding: 1rem !important;
+  }
+  
+  .team-title h4 {
+    font-size: 1.1rem;
+  }
+  
+  .team-title p {
+    font-size: 0.9rem;
+  }
+  
+  /* Blog page mobile fixes */
+  .blog-item {
+    margin-bottom: 1rem;
+  }
+  
+  .blog-content {
+    padding: 1rem !important;
+  }
+  
+  .blog-categiry {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem;
+  }
+  
+  /* Testimonial mobile fixes */
+  .testimonial-item {
+    padding: 1rem !important;
+  }
+  
+  .testimonial-item p {
+    font-size: 0.9rem;
+  }
+  
+  /* FAQ mobile fixes */
+  .accordion-button {
+    font-size: 0.9rem !important;
+    padding: 1rem !important;
+  }
+  
+  .accordion-body {
+    font-size: 0.85rem !important;
+    padding: 1rem !important;
+  }
+  
+  /* Page header mobile fixes */
+  .display-4 {
+    font-size: 1.5rem !important;
+  }
+  
+  .breadcrumb {
+    font-size: 0.8rem;
+  }
+  
+  /* Modal mobile fixes */
+  .modern-dialog {
+    width: 95vw !important;
+    margin: 1rem !important;
+  }
+  
+  .modern-header {
+    padding: 1rem !important;
+  }
+  
+  .modern-body {
+    padding: 1rem !important;
+    max-height: 60vh !important;
+  }
+  
+  .modern-form .form-control {
+    font-size: 0.9rem !important;
+    padding: 0.5rem !important;
+  }
+  
+  .modern-form .form-label {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  /* Button mobile fixes */
+  .btn {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+  
+  .btn-lg {
+    font-size: 1rem !important;
+    padding: 0.75rem 1.5rem !important;
+  }
+  
+  /* Search and filter mobile fixes */
+  .btn-group {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+  
+  .btn-group .btn {
+    flex: 1 !important;
+    min-width: auto !important;
+    margin: 0 !important;
+  }
+  
+  .input-group {
+    margin-top: 0.5rem !important;
+  }
+  
+  /* Swiper carousel mobile fixes */
+  .testimonial-carousel {
+    padding: 0 1rem;
+  }
+  
+  .testimonial-prev,
+  .testimonial-next {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  /* Mobile dropdown fixes */
+  .rotate-180 {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .mobile-dropdown-menu.show {
+    max-height: 250px !important;
   }
 }
 
