@@ -13,16 +13,16 @@ function Blog() {
     },
     {
       img: blog2,
-      category: 'Health Insurance',
+      category: 'General Insurance',
       date: '15 Jan, 2025',
-      title: 'Secure Your Family Future With Insurance',
+      title: 'Comprehensive Protection With General Insurance',
       author: 'Admin'
     },
     {
       img: blog3,
-      category: 'Car Insurance',
+      category: 'Health Insurance',
       date: '20 Jan, 2025',
-      title: 'Why You Need Auto Insurance Protection',
+      title: 'Protect Your Health With Medical Insurance Coverage',
       author: 'Admin'
     }
   ]
@@ -52,7 +52,14 @@ function Blog() {
                     <div className="small"><span className="fa fa-comment-alt text-primary"></span> 6 Comments</div>
                   </div>
                   <a href="#" className="h4 d-inline-block mb-4">{post.title}</a>
-                  <p className="mb-4">Discover practical tips and strategies to grow your business with smart financial planning and the right loan options from FinMitra.</p>
+                  <p className="mb-4">
+                    {post.category === 'General Insurance' 
+                      ? 'Learn about comprehensive general insurance coverage including property, liability, and other non-life insurance policies to protect your assets and business.'
+                      : post.category === 'Health Insurance'
+                      ? 'Discover the importance of health insurance coverage for medical emergencies, hospitalization costs, and ensuring your family\'s well-being with comprehensive health plans.'
+                      : 'Discover practical tips and strategies to grow your business with smart financial planning and the right loan options from FinMitra.'
+                    }
+                  </p>
                   <a href="#" className="btn btn-light rounded-pill py-2 px-4">Read More</a>
                 </div>
               </div>
