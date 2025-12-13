@@ -13,6 +13,12 @@ import sbiCardImg from '../assets/images/sbi_card-removebg-preview.png'
 import indusindCardImg from '../assets/images/induslnd_card-removebg-preview.png'
 import idfcCardImg from '../assets/images/idfc_card-removebg-preview.png'
 import bobCardImg from '../assets/images/bob_card-removebg-preview.png'
+// Insurance images
+import autoInsuranceImg from '../assets/images/auto_insurance.png'
+import commercialVehicleImg from '../assets/images/commercial_vehicle.png'
+import healthInsuranceImg from '../assets/images/health_insurance.png'
+import lifeInsuranceImg from '../assets/images/life_insurance.png'
+import twoWheelerInsuranceImg from '../assets/images/two_wheeler_insurance.png'
 
 function Services() {
   const [showModal, setShowModal] = useState(false)
@@ -34,11 +40,11 @@ function Services() {
     {
       name: 'Insurance',
       items: [
-        { title: 'Health Insurance', icon: 'fa fa-hospital', img: blog2 },
-        { title: 'Life Insurance', icon: 'fa fa-heart', img: blog1 },
-        { title: 'Auto Insurance', icon: 'fa fa-car', img: carLoanImg },
-        { title: 'Commercial Vehicle', icon: 'fa fa-truck', img: carLoanImg },
-        { title: 'Two Wheeler Insurance', icon: 'fa fa-motorcycle', img: blog3 }
+        { title: 'Health Insurance', icon: 'fa fa-hospital', img: healthInsuranceImg },
+        { title: 'Life Insurance', icon: 'fa fa-heart', img: lifeInsuranceImg },
+        { title: 'Auto Insurance', icon: 'fa fa-car', img: autoInsuranceImg },
+        { title: 'Commercial Vehicle', icon: 'fa fa-truck', img: commercialVehicleImg },
+{ title: 'Two Wheeler Insurance', icon: 'fa fa-motorcycle', img: twoWheelerInsuranceImg }
       ]
     },
     {
