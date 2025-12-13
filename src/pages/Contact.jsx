@@ -73,31 +73,43 @@ function Contact() {
       </div>
       <div className="container-fluid py-5">
         <div className="container">
-          <div className="row g-5">
-            <div className="col-lg-4 animated fadeInUp">
-              <div className="contact-info-card d-inline-flex w-100 p-4 rounded-4">
-                <i className="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
-                <div>
-                  <h4>Address</h4>
-                  <p className="mb-0">123 Street, New York, USA</p>
+          <div className="row g-4 justify-content-center">
+            <div className="col-md-6 col-lg-4 animated fadeInUp">
+              <div className="contact-info-card h-100 p-4 rounded-4 bg-white shadow-sm border-0 transition-all hover-shadow">
+                <div className="d-flex align-items-start">
+                  <div className="icon-box flex-shrink-0">
+                    <i className="fas fa-map-marker-alt fa-2x text-primary"></i>
+                  </div>
+                  <div className="content-box ms-3">
+                    <h4 className="mb-2">Address</h4>
+                    <p className="mb-0 text-muted">J-57 Ramesh Nagar, First Floor, New Delhi 110015</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 animated fadeInUp">
-              <div className="contact-info-card d-inline-flex w-100 p-4 rounded-4">
-                <i className="fas fa-envelope fa-2x text-primary me-4"></i>
-                <div>
-                  <h4>Mail Us</h4>
-                  <p className="mb-0">info@finmitrafinanceinsurance.com</p>
+            <div className="col-md-6 col-lg-4 animated fadeInUp">
+              <div className="contact-info-card h-100 p-4 rounded-4 bg-white shadow-sm border-0 transition-all hover-shadow">
+                <div className="d-flex align-items-start">
+                  <div className="icon-box flex-shrink-0">
+                    <i className="fas fa-envelope fa-2x text-primary"></i>
+                  </div>
+                  <div className="content-box ms-3">
+                    <h4 className="mb-2">Mail Us</h4>
+                    <p className="mb-0 text-muted">info@finmitrafinanceinsurance.com</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 animated fadeInUp">
-              <div className="contact-info-card d-inline-flex w-100 p-4 rounded-4">
-                <i className="fa fa-phone-alt fa-2x text-primary me-4"></i>
-                <div>
-                  <h4>Telephone</h4>
-                  <p className="mb-0">(+91) 81786 25027</p>
+            <div className="col-md-6 col-lg-4 animated fadeInUp">
+              <div className="contact-info-card h-100 p-4 rounded-4 bg-white shadow-sm border-0 transition-all hover-shadow">
+                <div className="d-flex align-items-start">
+                  <div className="icon-box flex-shrink-0">
+                    <i className="fa fa-phone-alt fa-2x text-primary"></i>
+                  </div>
+                  <div className="content-box ms-3">
+                    <h4 className="mb-2">Telephone</h4>
+                    <p className="mb-0 text-muted">(+91) 81786 25027</p>
+                  </div>
                 </div>
               </div>
             </div>
