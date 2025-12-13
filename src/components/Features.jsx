@@ -12,9 +12,9 @@ function Features() {
     },
     {
       icon: 'fa fa-rupee-sign',
-      title: 'Anytime Money Back',
-      description: 'Our transparent policies ensure hassle-free refunds and cancellations within specified periods. No hidden charges, complete peace of mind.',
-      details: 'FinMitra offers a comprehensive money-back guarantee on all our services. If you are not satisfied with any of our financial products within the first 30 days, you are eligible for a full refund. Our transparent pricing model ensures no hidden charges or unexpected fees. All terms and conditions are clearly explained upfront, and our customer service team is always available to address any concerns about our refund policy.'
+      title: 'Cashback',
+      description: 'Get exciting cashback offers on loans, insurance, and credit cards. Save money while accessing the best financial solutions for your needs.',
+      details: 'FinMitra offers attractive cashback rewards on various financial products. Earn cashback on loan disbursals, insurance policy purchases, and credit card activations. Our cashback program is designed to help you save money while accessing premium financial services. The more you use our services, the more rewards you earn. All cashback amounts are credited directly to your account within 7 business days.'
     },
     {
       icon: 'fa fa-bullseye',
@@ -81,6 +81,85 @@ function Features() {
               <div className="modal-body p-4">
                 <p className="lead">{selectedFeature.description}</p>
                 <p>{selectedFeature.details}</p>
+                
+                {selectedFeature.title === 'Cashback' && (
+                  <div className="mt-4">
+                    <h6 className="text-primary mb-4">🎉 Cashback Offers Available</h6>
+                    
+                    <div className="row g-3">
+                      <div className="col-md-6">
+                        <div className="card border-0 shadow-sm rounded-3 h-100">
+                          <div className="card-body p-3">
+                            <h6 className="text-primary mb-2">🏥 Health Insurance</h6>
+                            <p className="mb-2"><strong>💰 Cashback on Policy Purchase</strong></p>
+                            <p className="small text-muted mb-0">Secure your health & earn cashback with every health insurance policy purchase</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="col-md-6">
+                        <div className="card border-0 shadow-sm rounded-3 h-100">
+                          <div className="card-body p-3">
+                            <h6 className="text-primary mb-2">💳 Personal Loan</h6>
+                            <p className="mb-2"><strong>💰 Cashback on Loan Disbursal</strong></p>
+                            <p className="small text-muted mb-0">Instant funds with added rewards on personal loan approvals</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="col-md-6">
+                        <div className="card border-0 shadow-sm rounded-3 h-100">
+                          <div className="card-body p-3">
+                            <h6 className="text-primary mb-2">🚗 Car Loan</h6>
+                            <p className="mb-2"><strong>💰 Cashback on Car Loan Approval</strong></p>
+                            <p className="small text-muted mb-0">Drive your dream car & save more with exclusive cashback offers</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="col-md-6">
+                        <div className="card border-0 shadow-sm rounded-3 h-100">
+                          <div className="card-body p-3">
+                            <h6 className="text-primary mb-2">🏢 Business Loan</h6>
+                            <p className="mb-2"><strong>💰 Cashback on Business Loan Disbursal</strong></p>
+                            <p className="small text-muted mb-0">Grow your business with extra benefits and cashback rewards</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="col-md-6">
+                        <div className="card border-0 shadow-sm rounded-3 h-100">
+                          <div className="card-body p-3">
+                            <h6 className="text-primary mb-2">🚗 Car Insurance</h6>
+                            <p className="mb-2"><strong>💰 Cashback on Policy Issuance</strong></p>
+                            <p className="small text-muted mb-0">Protect your vehicle & get rewarded with instant cashback</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="col-md-6">
+                        <div className="card border-0 shadow-sm rounded-3 h-100">
+                          <div className="card-body p-3">
+                            <h6 className="text-primary mb-2">💰 Life Insurance</h6>
+                            <p className="mb-2"><strong>💰 Cashback on Policy Activation</strong></p>
+                            <p className="small text-muted mb-0">Secure your family's future with cashback on life insurance</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="alert alert-success mt-4 rounded-3" role="alert">
+                      <h6 className="alert-heading mb-2">💡 How to Claim Cashback:</h6>
+                      <ol className="mb-0 small">
+                        <li>Apply for any financial product through FinMitra</li>
+                        <li>Complete the required documentation and verification</li>
+                        <li>Get your loan/insurance/credit card approved</li>
+                        <li>Cashback automatically credited within 7 business days</li>
+                      </ol>
+                    </div>
+                  </div>
+                )}
+                
                 <div className="mt-4">
                   <h6 className="text-primary mb-3">Key Benefits:</h6>
                   <ul className="list-unstyled">

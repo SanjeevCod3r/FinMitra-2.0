@@ -216,6 +216,54 @@ function Services() {
                       <input type="text" className="form-control form-control-lg" placeholder="Amount / Product" required />
                     </div>
                   </div>
+                  
+                  {/* Cashback Terms and Conditions */}
+                  <div className="col-12 field mt-4">
+                    <div className="alert alert-info border-0 rounded-3" role="alert">
+                      <h6 className="alert-heading mb-3">🎉 Cashback Offers on Loans & Insurance</h6>
+                      <p className="mb-3"><strong>FinMitra Finance and Insurance</strong> - Get exclusive <strong>cashback benefits</strong> on selected financial and insurance products with <strong>FinMitra Finance and Insurance</strong>. Enjoy rewards while securing your health, vehicle, home, or business.</p>
+                      
+                      <div className="row mb-3">
+                        <div className="col-md-6">
+                          <h6 className="text-primary mb-2">Products Eligible for Cashback</h6>
+                          <ul className="list-unstyled small">
+                            <li className="mb-1">✔ Health Insurance</li>
+                            <li className="mb-1">✔ Personal Loan</li>
+                            <li className="mb-1">✔ Car Loan</li>
+                            <li className="mb-1">✔ Business Loan</li>
+                            <li className="mb-1">✔ Car Insurance</li>
+                          </ul>
+                        </div>
+                        <div className="col-md-6">
+                          <h6 className="text-primary mb-2">How Cashback Works</h6>
+                          <ul className="list-unstyled small">
+                            <li className="mb-1">• Cashback credited within 7–10 working days</li>
+                            <li className="mb-1">• Valid on successful policy issuance or loan disbursal</li>
+                            <li className="mb-1">• No impact on policy or loan terms</li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <div className="border-top pt-3 mt-3">
+                        <h6 className="text-primary mb-3">Important Conditions</h6>
+                        <ol className="small mb-0">
+                          <li className="mb-2">Cancellation, Rejection, or Non-Compliance will void cashback</li>
+                          <li className="mb-2">Partner Terms apply - governed by respective insurer, bank, or NBFC</li>
+                          <li className="mb-2">No Impact on Policy or Loan Terms</li>
+                          <li className="mb-2">Offer may be modified or withdrawn without prior notice</li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="col-12 field">
+                    <div className="form-check mb-3">
+                      <input className="form-check-input" type="checkbox" id="termsCheckbox" required />
+                      <label className="form-check-label" htmlFor="termsCheckbox">
+                        I accept the <strong>cashback terms and conditions</strong> mentioned above and agree to be bound by them
+                      </label>
+                    </div>
+                  </div>
                   <div className="d-flex justify-content-end gap-2 mt-4">
                     <button type="button" className="btn btn-outline-secondary rounded-pill px-4" onClick={closeForm}>Cancel</button>
                     <button type="submit" className="btn btn-primary rounded-pill px-4">Submit</button>
