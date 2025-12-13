@@ -2248,6 +2248,11 @@
     height: 40px !important;
   }
   
+  /* Hide testimonial navigation buttons on mobile */
+  .carousel-nav {
+    display: none !important;
+  }
+  
   /* Mobile dropdown fixes */
   .rotate-180 {
     transform: rotate(180deg);
