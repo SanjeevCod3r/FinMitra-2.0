@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 function Stats() {
   const [counters, setCounters] = useState([
     { current: 0, target: 10000, label: 'Happy Clients', suffix: '+' },
-    { current: 0, target: 500, label: 'Loan Products', suffix: '+' },
+    { current: 0, target: 500, label: 'Cr<br/>Disbursement', suffix: '+' },
     { current: 0, target: 50, label: 'Expert Advisors', suffix: '+' },
     { current: 0, target: 98, label: 'Success Rate', suffix: '%' }
   ])
@@ -72,7 +72,7 @@ function Stats() {
                   <span className="display-4 text-primary fw-bold">{counter.current}</span>
                   <span className="display-4 text-primary fw-bold">{counter.suffix}</span>
                 </div>
-                <h5 className="mt-3 mb-0">{counter.label}</h5>
+                <h5 className="mt-3 mb-0" dangerouslySetInnerHTML={{ __html: counter.label }}></h5>
               </div>
             </div>
           ))}
