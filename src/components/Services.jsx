@@ -81,7 +81,7 @@ function Services() {
               <button
                 key={cat.name}
                 type="button"
-                className={`btn btn-sm ${activeCategory === cat.name ? 'btn-primary' : 'btn-outline-primary'} rounded-pill me-2 mb-2`}
+                className={`btn ${activeCategory === cat.name ? 'btn-primary' : 'btn-outline-primary'} rounded-pill me-2 mb-2 fw-bold py-3 px-5`}
                 onClick={() => setActiveCategory(cat.name)}
               >
                 {cat.name}

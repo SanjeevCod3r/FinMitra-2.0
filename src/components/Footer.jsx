@@ -24,10 +24,10 @@ function Footer() {
                 <p className="text-white mb-3">FinMitra is your trusted financial partner, offering comprehensive loan solutions, insurance coverage, and credit card options to help you achieve your financial goals with confidence.</p>
                 <div className="d-flex align-items-center">
                   <i className="fas fa-share fa-2x text-white me-2"></i>
-                  <a className="btn btn-light btn-md-square rounded-circle me-3" href="#"><i className="fab fa-facebook-f text-dark"></i></a>
-                  <a className="btn btn-light btn-md-square rounded-circle me-3" href="#"><i className="fab fa-twitter text-dark"></i></a>
-                  <a className="btn btn-light btn-md-square rounded-circle me-3" href="#"><i className="fab fa-instagram text-dark"></i></a>
-                  <a className="btn btn-light btn-md-square rounded-circle me-0" href="#"><i className="fab fa-linkedin-in text-dark"></i></a>
+                  <a className="btn btn-light btn-md-square rounded-circle me-3" href="https://facebook.com/finmitra" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f text-dark"></i></a>
+                  <a className="btn btn-light btn-md-square rounded-circle me-3" href="https://twitter.com/finmitra" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter text-dark"></i></a>
+                  <a className="btn btn-light btn-md-square rounded-circle me-3" href="https://instagram.com/finmitra" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram text-dark"></i></a>
+                  <a className="btn btn-light btn-md-square rounded-circle me-0" href="https://linkedin.com/company/finmitra" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in text-dark"></i></a>
                 </div>
               </div>
             </div>
@@ -45,12 +45,12 @@ function Footer() {
             <div className="col-md-6 col-lg-6 col-xl-3">
               <div className="footer-item d-flex flex-column">
                 <h4 className="text-white mb-4">Services</h4>
-                <a href="#"><i className="fas fa-angle-right me-2"></i> Life Insurance</a>
-                <a href="#"><i className="fas fa-angle-right me-2"></i> Health Insurance</a>
-                <a href="#"><i className="fas fa-angle-right me-2"></i> Car Insurance</a>
-                <a href="#"><i className="fas fa-angle-right me-2"></i> Home Insurance</a>
-                <a href="#"><i className="fas fa-angle-right me-2"></i> Business Insurance</a>
-                <a href="#"><i className="fas fa-angle-right me-2"></i> Travel Insurance</a>
+                <Link to="/services#insurance"><i className="fas fa-angle-right me-2"></i> Life Insurance</Link>
+                <Link to="/services#insurance"><i className="fas fa-angle-right me-2"></i> Health Insurance</Link>
+                <Link to="/services#insurance"><i className="fas fa-angle-right me-2"></i> Car Insurance</Link>
+                <Link to="/services#insurance"><i className="fas fa-angle-right me-2"></i> Home Insurance</Link>
+                <Link to="/services#insurance"><i className="fas fa-angle-right me-2"></i> Business Insurance</Link>
+                <Link to="/services#insurance"><i className="fas fa-angle-right me-2"></i> Travel Insurance</Link>
               </div>
             </div>
             <div className="col-md-6 col-lg-6 col-xl-3">
@@ -62,7 +62,7 @@ function Footer() {
                       <div className="footer-instagram rounded">
                         <img src={img} className="img-fluid w-100" alt="" />
                         <div className="footer-search-icon">
-                          <a href="#" className="btn btn-light btn-md-square rounded-circle"><i className="fab fa-instagram text-primary"></i></a>
+                          <a href="https://instagram.com/finmitra" target="_blank" rel="noopener noreferrer" className="btn btn-light btn-md-square rounded-circle"><i className="fab fa-instagram text-primary"></i></a>
                         </div>
                       </div>
                     </div>
@@ -84,7 +84,7 @@ function Footer() {
             </div>
             <div className="col-md-6 text-center text-md-end text-body">
               <span className="text-white">Made by </span>
-              <a href="#" className="border-bottom text-white">ZesterTech</a>
+              <a href="https://zestertech.com" target="_blank" rel="noopener noreferrer" className="border-bottom text-white">ZesterTech</a>
             </div>
           </div>
         </div>
