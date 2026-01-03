@@ -7,7 +7,6 @@ import About from './pages/About'
 import Services from './pages/Services'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
-import Team from './pages/Team'
 import Testimonial from './pages/Testimonial'
 import FAQ from './pages/FAQ'
 import Features from './pages/Features'
@@ -41,7 +40,6 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/emi-calculator" element={<EMICalculator />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/team" element={<Team />} />
         <Route path="/testimonial" element={<Testimonial />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/features" element={<Features />} />

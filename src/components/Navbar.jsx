@@ -114,7 +114,6 @@ function Navbar() {
                       </div>
                       <div className={`mobile-dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
                         <Link to="/features" className="mobile-dropdown-item" onClick={() => { setIsMenuOpen(false); setIsDropdownOpen(false); window.scrollTo(0, 0); }}>Our Features</Link>
-                        <Link to="/team" className="mobile-dropdown-item" onClick={() => { setIsMenuOpen(false); setIsDropdownOpen(false); window.scrollTo(0, 0); }}>Our team</Link>
                         <Link to="/testimonial" className="mobile-dropdown-item" onClick={() => { setIsMenuOpen(false); setIsDropdownOpen(false); window.scrollTo(0, 0); }}>Testimonial</Link>
                         <Link to="/faq" className="mobile-dropdown-item" onClick={() => { setIsMenuOpen(false); setIsDropdownOpen(false); window.scrollTo(0, 0); }}>FAQs</Link>
                         <Link to="/blog" className="mobile-dropdown-item" onClick={() => { setIsMenuOpen(false); setIsDropdownOpen(false); window.scrollTo(0, 0); }}>Blog</Link>
@@ -171,7 +170,6 @@ function Navbar() {
                   </a>
                   <div className="dropdown-menu">
                     <Link to="/features" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Our Features</Link>
-                    <Link to="/team" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Our team</Link>
                     <Link to="/testimonial" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Testimonial</Link>
                     <Link to="/faq" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>FAQs</Link>
                     <Link to="/blog" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Blog</Link>
