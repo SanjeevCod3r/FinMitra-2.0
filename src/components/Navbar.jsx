@@ -27,7 +27,7 @@ function Navbar() {
             <div className="col-lg-8 text-center text-lg-start mb-lg-0">
               <div className="d-flex flex-wrap">
                 <div className="border-end border-primary pe-3">
-                  <a href="tel:+918178625027" className="text-muted small"><i className="fas fa-phone-alt text-primary me-2"></i>+91 81786 25027</a>
+                  <a href="tel:+919310296757" className="text-muted small"><i className="fas fa-phone-alt text-primary me-2"></i>+91 9310296757</a>
                 </div>
                 <div className="ps-3">
                   <a href="mailto:info@finmitrafinanceinsurance.com" className="text-muted small"><i className="fas fa-envelope text-primary me-2"></i>info@finmitrafinanceinsurance.com</a>
@@ -135,7 +135,7 @@ function Navbar() {
                         </div>
                         <div>
                           <div className="small text-muted">Call to Our Experts</div>
-                          <div className="fw-bold">Free: + 91 81786 25027</div>
+                          <div className="fw-bold">Free: + 91 9310296757</div>
                         </div>
                       </div>
                       <div className="d-flex align-items-center">
@@ -192,7 +192,7 @@ function Navbar() {
               </a>
               <div className="d-flex flex-column ms-3">
                 <span>Call to Our Experts</span>
-                <a href="tel:+918178625027"><span className="text-dark">Free: + 91 81786 25027</span></a>
+                <a href="tel:+919310296757"><span className="text-dark">Free: + 91 9310296757</span></a>
               </div>
             </div>
           </nav>

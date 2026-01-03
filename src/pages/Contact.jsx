@@ -108,7 +108,7 @@ function Contact() {
                   </div>
                   <div className="content-box ms-3">
                     <h4 className="mb-2">Telephone</h4>
-                    <p className="mb-0 text-muted">(+91) 81786 25027</p>
+                    <p className="mb-0 text-muted">(+91) 9310296757</p>
                   </div>
                 </div>
               </div>

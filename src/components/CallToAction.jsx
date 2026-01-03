@@ -29,7 +29,7 @@ function CallToAction() {
                 <h4 className="text-primary mb-3 mt-2">Quick Contact</h4>
                 <div className="d-flex align-items-center mb-3">
                   <i className="fas fa-phone-alt text-primary me-3"></i>
-                  <span>+91 81786 25027</span>
+                  <span>+91 9310296757</span>
                 </div>
                 <div className="d-flex align-items-center mb-3">
                   <i className="fas fa-envelope text-primary me-3"></i>
