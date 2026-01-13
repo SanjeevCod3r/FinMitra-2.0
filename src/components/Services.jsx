@@ -3,22 +3,22 @@ import blog1 from '../assets/images/blog-1.png'
 import blog2 from '../assets/images/blog-2.png'
 import blog3 from '../assets/images/blog-3.png'
 import blog4 from '../assets/images/blog-4.png'
-import personalLoanImg from '../assets/images/personal_loan.png'
-import businessLoanImg from '../assets/images/business_loan.png'
-import usedCarLoanImg from '../assets/images/used_car_loan.png'
-import homeLoanImg from '../assets/images/home_loan.png'
-import carLoanImg from '../assets/images/car_loan.png'
+import personalLoanImg from "../assets/images/personal_loan.png";
+import businessLoanImg from "../assets/images/business-loan.png";
+import usedCarLoanImg from "../assets/images/used-car-loan.jpeg";
+import homeLoanImg from "../assets/images/home-loan.jpeg";
+import carLoanImg from "../assets/images/car-loan.jpeg";
 import hdfcCardImg from '../assets/images/hdfc_card-removebg-preview.png'
 import sbiCardImg from '../assets/images/sbi_card-removebg-preview.png'
 import indusindCardImg from '../assets/images/induslnd_card-removebg-preview.png'
 import idfcCardImg from '../assets/images/idfc_card-removebg-preview.png'
 import bobCardImg from '../assets/images/bob_card-removebg-preview.png'
 // Insurance images
-import autoInsuranceImg from '../assets/images/auto_insurance.png'
-import commercialVehicleImg from '../assets/images/commercial_vehicle.png'
-import healthInsuranceImg from '../assets/images/health_insurance.png'
-import lifeInsuranceImg from '../assets/images/life_insurance.png'
-import twoWheelerInsuranceImg from '../assets/images/two_wheeler_insurance.png'
+import autoInsuranceImg from "../assets/images/auto_insurance.png";
+import commercialVehicleImg from "../assets/images/commercial_vehicle.png";
+import healthInsuranceImg from "../assets/images/health-insurance.png";
+import lifeInsuranceImg from "../assets/images/life_insurance.png";
+import twoWheelerInsuranceImg from "../assets/images/two_wheeler_insurance.png";
 
 function Services() {
   const [showModal, setShowModal] = useState(false)
