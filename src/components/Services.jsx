@@ -1,8 +1,4 @@
 import { useState } from 'react'
-import blog1 from '../assets/images/blog-1.png'
-import blog2 from '../assets/images/blog-2.png'
-import blog3 from '../assets/images/blog-3.png'
-import blog4 from '../assets/images/blog-4.png'
 import personalLoanImg from "../assets/images/personal_loan.png";
 import businessLoanImg from "../assets/images/business-loan.png";
 import usedCarLoanImg from "../assets/images/used-car-loan.jpeg";
@@ -13,18 +9,21 @@ import sbiCardImg from '../assets/images/sbi_card-removebg-preview.png'
 import indusindCardImg from '../assets/images/induslnd_card-removebg-preview.png'
 import idfcCardImg from '../assets/images/idfc_card-removebg-preview.png'
 import bobCardImg from '../assets/images/bob_card-removebg-preview.png'
-// Insurance images
 import autoInsuranceImg from "../assets/images/auto_insurance.png";
 import commercialVehicleImg from "../assets/images/commercial_vehicle.png";
 import healthInsuranceImg from "../assets/images/health-insurance.png";
 import lifeInsuranceImg from "../assets/images/life_insurance.png";
 import twoWheelerInsuranceImg from "../assets/images/two_wheeler_insurance.png";
 
+const APPS_SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL
+
 function Services() {
   const [showModal, setShowModal] = useState(false)
   const [selectedService, setSelectedService] = useState('')
   const [activeCategory, setActiveCategory] = useState('Loans')
   const [query, setQuery] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
 
   const categories = [
     {
@@ -44,7 +43,7 @@ function Services() {
         { title: 'Life Insurance', icon: 'fa fa-heart', img: lifeInsuranceImg },
         { title: 'Auto Insurance', icon: 'fa fa-car', img: autoInsuranceImg },
         { title: 'Commercial Vehicle', icon: 'fa fa-truck', img: commercialVehicleImg },
-{ title: 'Two Wheeler Insurance', icon: 'fa fa-motorcycle', img: twoWheelerInsuranceImg }
+        { title: 'Two Wheeler Insurance', icon: 'fa fa-motorcycle', img: twoWheelerInsuranceImg }
       ]
     },
     {
@@ -61,10 +60,60 @@ function Services() {
 
   const openForm = (serviceTitle) => {
     setSelectedService(serviceTitle)
+    setSubmitStatus(null)
     setShowModal(true)
   }
 
-  const closeForm = () => setShowModal(false)
+  const closeForm = () => {
+    setShowModal(false)
+    setSubmitStatus(null)
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setSubmitting(true)
+    setSubmitStatus(null)
+
+    const form = e.target
+    const categoryName = selectedService.split(' - ')[0]
+
+    const payload = {
+      category: categoryName,
+      service: selectedService,
+      name: form.name_field.value,
+      mobile: form.mobile.value,
+      panCard: form.panCard.value,
+      dob: form.dob.value,
+      email: form.email.value,
+      companyName: form.companyName.value,
+      designation: form.designation.value,
+      netSalary: form.netSalary.value,
+      officialEmail: form.officialEmail.value,
+      officePincode: form.officePincode.value,
+      officeAddress: form.officeAddress.value,
+      city: form.city.value,
+      residenceAddress: form.residenceAddress.value,
+      pinCode: form.pinCode.value,
+      loanOrSumAssured: form.loanOrSumAssured.value,
+      submittedAt: new Date().toLocaleString()
+    }
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      setSubmitStatus('success')
+      form.reset()
+      setTimeout(() => closeForm(), 1500)
+    } catch {
+      setSubmitStatus('error')
+    } finally {
+      setSubmitting(false)
+    }
+  }
 
   return (
     <div className="container-fluid service py-5">
@@ -76,7 +125,7 @@ function Services() {
         </div>
 
         <div className="d-flex flex-column flex-md-row align-items-stretch align-items-md-center gap-3 mb-4">
-          <div className="btn-group flex-wrap" role="group" aria-label="Category filter">
+          <div className="btn-group flex-wrap" role="group">
             {categories.map((cat) => (
               <button
                 key={cat.name}
@@ -106,40 +155,40 @@ function Services() {
           const filteredItems = cat.items.filter(item => item.title.toLowerCase().includes(query.toLowerCase()))
           if (filteredItems.length === 0) return null
           return (
-          <div key={ci} className="mb-5">
-            <div className="d-flex align-items-center mb-4">
-              <h3 className="mb-0">{cat.name}</h3>
-              <div className="ms-3 flex-grow-1 border-top"></div>
-            </div>
-            <div className="row g-4">
-              {filteredItems.map((item, i) => (
-                <div key={i} className="col-sm-6 col-lg-4 col-xl-3">
-                  <div className="service-item h-100">
-                    <div className="service-img">
-                      <img src={item.img} className="img-fluid rounded-top w-100" alt={item.title} />
-                      <div className="service-icon p-3">
-                        <i className={`${item.icon} fa-2x`}></i>
+            <div key={ci} className="mb-5">
+              <div className="d-flex align-items-center mb-4">
+                <h3 className="mb-0">{cat.name}</h3>
+                <div className="ms-3 flex-grow-1 border-top"></div>
+              </div>
+              <div className="row g-4">
+                {filteredItems.map((item, i) => (
+                  <div key={i} className="col-sm-6 col-lg-4 col-xl-3">
+                    <div className="service-item h-100">
+                      <div className="service-img">
+                        <img src={item.img} className="img-fluid rounded-top w-100" alt={item.title} />
+                        <div className="service-icon p-3">
+                          <i className={`${item.icon} fa-2x`}></i>
+                        </div>
                       </div>
-                    </div>
-                    <div className="service-content p-4 d-flex flex-column">
-                      <div className="service-content-inner mb-0 w-100 d-flex flex-column">
-                        <span className="d-inline-block h5 mb-2">{item.title}</span>
-                        <p className="mb-3">Apply now to get started.</p>
-                        <button className="btn btn-primary rounded-pill align-self-start py-2 px-4" onClick={() => openForm(`${cat.name} - ${item.title}`)}>Apply</button>
+                      <div className="service-content p-4 d-flex flex-column">
+                        <div className="service-content-inner mb-0 w-100 d-flex flex-column">
+                          <span className="d-inline-block h5 mb-2">{item.title}</span>
+                          <p className="mb-3">Apply now to get started.</p>
+                          <button className="btn btn-primary rounded-pill align-self-start py-2 px-4" onClick={() => openForm(`${cat.name} - ${item.title}`)}>Apply</button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
           )
         })}
 
         {showModal && (
           <div className="position-fixed top-0 start-0 w-100 h-100 modern-modal" style={{ zIndex: 1050 }}>
             <div className="w-100 h-100 modern-modal-backdrop" onClick={closeForm}></div>
-            <div className="modern-dialog bg-white rounded-4 shadow" style={{ 
+            <div className="modern-dialog bg-white rounded-4 shadow" style={{
               position: 'fixed',
               top: '50%',
               left: '50%',
@@ -153,76 +202,74 @@ function Services() {
                 <button className="modern-close btn btn-sm rounded-circle" onClick={closeForm} aria-label="Close">&times;</button>
               </div>
               <div className="p-3 p-md-4 modern-body" style={{ maxHeight: '70vh', overflowY: 'auto' }}>
-                <form className="modern-form" onSubmit={(e) => { e.preventDefault(); closeForm(); }}>
+                <form className="modern-form" onSubmit={handleSubmit}>
                   <div className="row g-3">
                     <div className="col-md-6 field">
                       <label className="form-label">Name</label>
-                      <input type="text" className="form-control form-control-lg" placeholder="Full Name" required />
+                      <input name="name_field" type="text" className="form-control form-control-lg" placeholder="Full Name" required />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">Mobile</label>
-                      <input type="tel" className="form-control form-control-lg" placeholder="10-digit mobile" pattern="^[0-9]{10}$" required />
+                      <input name="mobile" type="tel" className="form-control form-control-lg" placeholder="10-digit mobile" pattern="^[0-9]{10}$" required />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">Pan Card</label>
-                      <input type="text" className="form-control form-control-lg" placeholder="ABCDE1234F" pattern="^[A-Z]{5}[0-9]{4}[A-Z]{1}$" />
+                      <input name="panCard" type="text" className="form-control form-control-lg" placeholder="ABCDE1234F" pattern="^[A-Z]{5}[0-9]{4}[A-Z]{1}$" />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">DOB</label>
-                      <input type="date" className="form-control form-control-lg" required />
+                      <input name="dob" type="date" className="form-control form-control-lg" required />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">E-mail</label>
-                      <input type="email" className="form-control form-control-lg" placeholder="name@example.com" required />
+                      <input name="email" type="email" className="form-control form-control-lg" placeholder="name@example.com" required />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">Company Name</label>
-                      <input type="text" className="form-control form-control-lg" placeholder="Company" />
+                      <input name="companyName" type="text" className="form-control form-control-lg" placeholder="Company" />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">Designation</label>
-                      <input type="text" className="form-control form-control-lg" placeholder="Designation" />
+                      <input name="designation" type="text" className="form-control form-control-lg" placeholder="Designation" />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">Net Salary</label>
-                      <input type="number" className="form-control form-control-lg" placeholder="Monthly salary" min="0" />
+                      <input name="netSalary" type="number" className="form-control form-control-lg" placeholder="Monthly salary" min="0" />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">Official E-mail (optional)</label>
-                      <input type="email" className="form-control form-control-lg" placeholder="official@company.com" />
+                      <input name="officialEmail" type="email" className="form-control form-control-lg" placeholder="official@company.com" />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">Office Pincode</label>
-                      <input type="text" className="form-control form-control-lg" placeholder="Pincode" pattern="^[0-9]{6}$" />
+                      <input name="officePincode" type="text" className="form-control form-control-lg" placeholder="Pincode" pattern="^[0-9]{6}$" />
                     </div>
                     <div className="col-12 field">
                       <label className="form-label">Office Address</label>
-                      <input type="text" className="form-control form-control-lg" placeholder="Address line" />
+                      <input name="officeAddress" type="text" className="form-control form-control-lg" placeholder="Address line" />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">City</label>
-                      <input type="text" className="form-control form-control-lg" placeholder="City" />
+                      <input name="city" type="text" className="form-control form-control-lg" placeholder="City" />
                     </div>
                     <div className="col-12 field">
                       <label className="form-label">Residence Address</label>
-                      <input type="text" className="form-control form-control-lg" placeholder="Address line" />
+                      <input name="residenceAddress" type="text" className="form-control form-control-lg" placeholder="Address line" />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">Pin Code</label>
-                      <input type="text" className="form-control form-control-lg" placeholder="Pincode" pattern="^[0-9]{6}$" />
+                      <input name="pinCode" type="text" className="form-control form-control-lg" placeholder="Pincode" pattern="^[0-9]{6}$" />
                     </div>
                     <div className="col-md-6 field">
                       <label className="form-label">{selectedService.includes('Insurance') ? 'Sum Assured' : 'Loan Required'}</label>
-                      <input type="text" className="form-control form-control-lg" placeholder="Amount / Product" required />
+                      <input name="loanOrSumAssured" type="text" className="form-control form-control-lg" placeholder="Amount / Product" required />
                     </div>
                   </div>
-                  
-                  {/* Cashback Terms and Conditions */}
+
                   <div className="col-12 field mt-4">
                     <div className="alert alert-info border-0 rounded-3" role="alert">
                       <h6 className="alert-heading mb-3">🎉 Cashback Offers on Loans & Insurance</h6>
-                      <p className="mb-3"><strong>FinMitra Finance and Insurance</strong> - Get exclusive <strong>cashback benefits</strong> on selected financial and insurance products with <strong>FinMitra Finance and Insurance</strong>. Enjoy rewards while securing your health, vehicle, home, or business.</p>
-                      
+                      <p className="mb-3"><strong>FinMitra Finance and Insurance</strong> - Get exclusive <strong>cashback benefits</strong> on selected financial and insurance products. Enjoy rewards while securing your health, vehicle, home, or business.</p>
                       <div className="row mb-3">
                         <div className="col-md-6">
                           <h6 className="text-primary mb-2">Products Eligible for Cashback</h6>
@@ -243,7 +290,6 @@ function Services() {
                           </ul>
                         </div>
                       </div>
-                      
                       <div className="border-top pt-3 mt-3">
                         <h6 className="text-primary mb-3">Important Conditions</h6>
                         <ol className="small mb-0">
@@ -255,7 +301,7 @@ function Services() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="col-12 field">
                     <div className="form-check mb-3">
                       <input className="form-check-input" type="checkbox" id="termsCheckbox" required />
@@ -264,9 +310,19 @@ function Services() {
                       </label>
                     </div>
                   </div>
+
+                  {submitStatus === 'success' && (
+                    <div className="alert alert-success">✅ Application submitted successfully!</div>
+                  )}
+                  {submitStatus === 'error' && (
+                    <div className="alert alert-danger">❌ Submission failed. Please try again.</div>
+                  )}
+
                   <div className="d-flex justify-content-end gap-2 mt-4">
                     <button type="button" className="btn btn-outline-secondary rounded-pill px-4" onClick={closeForm}>Cancel</button>
-                    <button type="submit" className="btn btn-primary rounded-pill px-4">Submit</button>
+                    <button type="submit" className="btn btn-primary rounded-pill px-4" disabled={submitting}>
+                      {submitting ? 'Submitting...' : 'Submit'}
+                    </button>
                   </div>
                 </form>
               </div>

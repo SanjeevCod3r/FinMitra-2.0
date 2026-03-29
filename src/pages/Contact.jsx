@@ -1,7 +1,47 @@
+import { useState } from 'react'
 import PageHeader from '../components/PageHeader'
 import contactImg from '../assets/images/contact-img.png'
 
+const APPS_SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL
+
 function Contact() {
+  const [submitting, setSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setSubmitting(true)
+    setSubmitStatus(null)
+
+    const form = e.target
+
+    const payload = {
+      category: 'Contact',
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      project: form.project.value,
+      subject: form.subject.value,
+      message: form.message.value,
+      submittedAt: new Date().toLocaleString()
+    }
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(payload)
+      })
+      setSubmitStatus('success')
+      form.reset()
+    } catch {
+      setSubmitStatus('error')
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
   return (
     <>
       <PageHeader title="Contact Us" breadcrumb="Contact" />
@@ -22,47 +62,59 @@ function Contact() {
                   <div className="ms-3 flex-grow-1 gradient-bar"></div>
                 </div>
                 <h1 className="display-6 mb-3">Get In Touch With Us</h1>
-                <p className="mb-4 text-body">We’d love to hear from you. Send us a message and we’ll respond as soon as possible.</p>
-                <form className="contact-form modern-form">
+                <p className="mb-4 text-body">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                <form className="contact-form modern-form" onSubmit={handleSubmit}>
                   <div className="row g-3">
                     <div className="col-lg-12 col-xl-6 field">
                       <div className="form-floating">
-                        <input type="text" className="form-control" id="name" placeholder="Your Name" />
+                        <input type="text" className="form-control" id="name" name="name" placeholder="Your Name" required />
                         <label htmlFor="name">Your Name</label>
                       </div>
                     </div>
                     <div className="col-lg-12 col-xl-6 field">
                       <div className="form-floating">
-                        <input type="email" className="form-control" id="email" placeholder="Your Email" />
+                        <input type="email" className="form-control" id="email" name="email" placeholder="Your Email" required />
                         <label htmlFor="email">Your Email</label>
                       </div>
                     </div>
                     <div className="col-lg-12 col-xl-6 field">
                       <div className="form-floating">
-                        <input type="tel" className="form-control" id="phone" placeholder="Phone" />
+                        <input type="tel" className="form-control" id="phone" name="phone" placeholder="Phone" />
                         <label htmlFor="phone">Your Phone</label>
                       </div>
                     </div>
                     <div className="col-lg-12 col-xl-6 field">
                       <div className="form-floating">
-                        <input type="text" className="form-control" id="project" placeholder="Project" />
+                        <input type="text" className="form-control" id="project" name="project" placeholder="Project" />
                         <label htmlFor="project">Your Project</label>
                       </div>
                     </div>
                     <div className="col-12 field">
                       <div className="form-floating">
-                        <input type="text" className="form-control" id="subject" placeholder="Subject" />
+                        <input type="text" className="form-control" id="subject" name="subject" placeholder="Subject" />
                         <label htmlFor="subject">Subject</label>
                       </div>
                     </div>
                     <div className="col-12 field">
                       <div className="form-floating">
-                        <textarea className="form-control" placeholder="Leave a message here" id="message" style={{ height: '160px' }}></textarea>
+                        <textarea className="form-control" placeholder="Leave a message here" id="message" name="message" style={{ height: '160px' }}></textarea>
                         <label htmlFor="message">Message</label>
                       </div>
                     </div>
+                    {submitStatus === 'success' && (
+                      <div className="col-12">
+                        <div className="alert alert-success mb-0">✅ Message sent successfully!</div>
+                      </div>
+                    )}
+                    {submitStatus === 'error' && (
+                      <div className="col-12">
+                        <div className="alert alert-danger mb-0">❌ Failed to send. Please try again.</div>
+                      </div>
+                    )}
                     <div className="col-12">
-                      <button className="btn btn-primary w-100 py-3 rounded-pill shadow-lg" type="submit">Send Message</button>
+                      <button className="btn btn-primary w-100 py-3 rounded-pill shadow-lg" type="submit" disabled={submitting}>
+                        {submitting ? 'Sending...' : 'Send Message'}
+                      </button>
                     </div>
                   </div>
                 </form>
